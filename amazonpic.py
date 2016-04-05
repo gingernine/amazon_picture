@@ -2,7 +2,6 @@
 # coding: utf-8
 
 from urllib.request import build_opener
-from urllib.parse import urlencode
 from PIL import Image
 from io import BytesIO
 from math import ceil, sqrt
@@ -109,7 +108,7 @@ def resize_img(i, url, asin, dirpath):
 
 
 if __name__=='__main__':
-    asin=input('ASINを入力してください ---> ')
+    asin=input('ASINを入力してください ---> ').replace(' ','')
     folder=input('保存先のフォルダ名を入力してください ---> ')
     dirpath='C:\\Downloads\\'+folder
     if not os.path.exists(dirpath):
