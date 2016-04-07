@@ -13,7 +13,7 @@ import os
 
 
 class ExcelIO(object):
-    """class handling Excel book I/O"""
+    """class handling with Excel book I/O"""
     def __init__(self, bookname, sheetname):
         self.bookname=bookname
         self.sheetname=sheetname
@@ -109,7 +109,10 @@ def resize_img(i, url, asin, dirpath):
 
 if __name__=='__main__':
     asin=input('ASINを入力してください ---> ').replace(' ','')
-    folder=input('保存先のフォルダ名を入力してください ---> ')
+    folder=input('\n\n保存先のフォルダ名を入力してください\n'
+                '入力が無い場合はC:\\Downloadsに直接保存します\n'
+                '存在しないフォルダ名が入力された場合はC:\\Downloads下に自動作成します\n\n'
+                '入力 ---> ')
     dirpath='C:\\Downloads\\'+folder
     if not os.path.exists(dirpath):
         os.makedirs(dirpath)
